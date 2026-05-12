@@ -7,7 +7,8 @@
 		"dev": "wrangler types && wrangler dev",
 		"start": "wrangler types && wrangler dev",
 		"types": "wrangler types",
-		"format": "prettier --write --ignore-unknown ."
+		"format": "prettier --write --ignore-unknown .",
+		"postinstall": "wrangler types"
 	},
 	"devDependencies": {
 		"@types/node": "^25.7.0",
