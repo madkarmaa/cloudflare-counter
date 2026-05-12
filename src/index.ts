@@ -1,5 +1,6 @@
-import { DurableObject } from 'cloudflare:workers';
+import { DurableObject, env } from 'cloudflare:workers';
 import { Hono } from 'hono';
+import { cors } from 'hono/cors';
 
 export class Counter extends DurableObject {
     count: number = 0;
@@ -66,6 +67,14 @@ export class RateLimiter extends DurableObject {
 }
 
 const app = new Hono<{ Bindings: Env }>();
+
+app.use(
+    '*',
+    cors({
+        origin: env.ALLOWED_ORIGINS,
+        allowMethods: ['GET', 'POST']
+    })
+);
 
 app.get('/', async (ctx) => {
     const counter = ctx.env.COUNTER_DO.getByName('counter');

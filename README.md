@@ -11,6 +11,7 @@ The following environment variables can be adjusted in your `[vars]` section to 
 - `ALLOWED_REQUESTS`: Number of requests allowed per timeframe.
 - `REQUESTS_WINDOW_MS`: The timeframe sliding window in milliseconds.
 - `MAX_WAIT_MS`: The maximum time in milliseconds the server will queue/wait a request before outright rejecting it.
+- `ALLOWED_ORIGINS`: A list of origins, such as frontend applications, allowed to access the API (CORS configuration).
 
 ## Local Development
 

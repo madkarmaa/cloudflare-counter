@@ -27,3 +27,7 @@ class_name = "RateLimiter"
 ALLOWED_REQUESTS = 5
 REQUESTS_WINDOW_MS = 5000
 MAX_WAIT_MS = 5000
+ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:4173",
+]
