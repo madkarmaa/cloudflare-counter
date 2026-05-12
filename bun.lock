@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "counter",
+      "name": "cloudflare-counter",
       "dependencies": {
         "hono": "^4.12.18",
       },
