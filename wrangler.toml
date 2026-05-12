@@ -1,0 +1,29 @@
+name = "counter"
+main = "src/index.ts"
+compatibility_date = "2026-05-11"
+compatibility_flags = ["nodejs_compat"]
+upload_source_maps = true
+
+[observability]
+enabled = true
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Counter"]
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["RateLimiter"]
+
+[[durable_objects.bindings]]
+name = "COUNTER_DO"
+class_name = "Counter"
+
+[[durable_objects.bindings]]
+name = "RATE_LIMITER_DO"
+class_name = "RateLimiter"
+
+[vars]
+ALLOWED_REQUESTS = 5
+REQUESTS_WINDOW_MS = 5000
+MAX_WAIT = 5000
