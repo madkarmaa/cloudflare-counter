@@ -50,7 +50,7 @@ export class RateLimiter extends DurableObject {
 				);
 		}
 
-		if (waitMs > this.env.MAX_WAIT) return { waitMs, rejected: true };
+		if (waitMs > this.env.MAX_WAIT_MS) return { waitMs, rejected: true };
 
 		active.push(now + waitMs);
 		await this.ctx.storage.put(

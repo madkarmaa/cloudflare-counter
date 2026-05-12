@@ -26,4 +26,4 @@ class_name = "RateLimiter"
 [vars]
 ALLOWED_REQUESTS = 5
 REQUESTS_WINDOW_MS = 5000
-MAX_WAIT = 5000
+MAX_WAIT_MS = 5000
